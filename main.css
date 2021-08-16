@@ -34,13 +34,13 @@ nav ul li
 	background: black;
 	padding: 5px 15px;
 	margin: 0;
+	font-size: 20px;
 }
 
 nav ul li a, a
 {
 	color: white;
 }
-
 
 .row:after
 {
@@ -60,39 +60,59 @@ nav ul li a, a
 	text-align: center;
 }
 
-/* Style the tab */
-.tab {
-  overflow: hidden;
+.catButtons{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.catButtons li{
+  float: left;
+  margin: none;
+  width: 100px;
+  height: 45px;
+  position: relative;
+}
+
+.catButtons label, .catButtons input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+.catButtons input[type="radio"] {
+  opacity: 0.01;
+  z-index: 100;
+}
+
+.catButtons input[type="radio"]:checked+label, .Checked+label {
+  background: #333;
+}
+
+.catButtons label {
+  padding: 5px;
   border: 1px solid black;
+  border-top: none;
+  cursor: pointer;
+  z-index: 90;
   background-color: #182335;
 }
 
-/* Style the buttons that are used to open the tab content */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  color: white;
+.catButtons label:hover {
+  background: #ddd;
 }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
+/* Clear floats */
+.catButtons:after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid black;
-  border-top: none;
+.catButtons li:not(:last-child){
+	border-right: none;
 }
